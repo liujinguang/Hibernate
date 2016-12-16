@@ -4,9 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Properties;
 
-public class BusinessService {
-
+public class BusinessService2 {
+	
 	static {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -16,9 +17,16 @@ public class BusinessService {
 	}
 	
 	public Connection getConnection() throws SQLException {
-		String url = "jdbc:mysql://localhost:3306/db_hibernate?verifyServerCertificate=false&useSSL=false";
+		String url = "jdbc:mysql://localhost:3306/db_hibernate";
 		String user = "root";
 		String password = "infinera";
+		
+		Properties properties = new Properties();
+		
+		properties.setProperty("user", "root");
+		properties.setProperty("password", "infinera");
+		properties.setProperty("useSSL", "false");
+		properties.setProperty("verifyServerCertificate", "false");
 		
 		return DriverManager.getConnection(url, user, password);
 	}

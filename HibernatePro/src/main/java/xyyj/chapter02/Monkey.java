@@ -1,4 +1,4 @@
-package xyyj.chapter01;
+package xyyj.chapter02;
 
 public class Monkey {
 	public Monkey() {
@@ -41,8 +41,12 @@ public class Monkey {
 	public void setGender(char gender) {
 		this.gender = gender;
 	}
-
-
+	
+	@Override
+	public String toString() {
+		return "[ID = " + id + ", name = " + name + ", age = " + age + ", gender = " + gender + "]";
+	}
+	
 	private Long id;
 	private String name;
 	private int age;

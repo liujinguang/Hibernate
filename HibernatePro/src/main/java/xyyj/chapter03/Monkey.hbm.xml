@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 17, 2016 1:22:41 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <!-- 设置了dynamic-insert和dynamic-update属性，表示会动态生成Monkyes表的insert和update语句 -->
+	<class name="xyyj.chapter03.Monkey" table="MONKEY" dynamic-insert="true"
+	    dynamic-update="true">
+		<id name="id" type="java.lang.Long">
+			<column name="ID" />
+			<generator class="native" />
+		</id>
+		<property name="name" type="java.lang.String">
+			<column name="NAME" />
+		</property>
+		
+		<!-- 把access属性设置为field，因此Hibernate会直接访问gender属性，而不会调用
+		getGender() 和setGender()方法，这样可以避免Hibernate执行setGender()方法
+		中的数据验证逻辑 -->
+		<property name="gender" type="char" access="field">
+			<column name="GENDER" />
+		</property>
+		
+		<property name="age" type="int">
+			<column name="AGE" />
+		</property>
+		
+		<!-- avgAge为派生属性 -->
+		<property name="avgAge" type="int" formula="(select avg(m.AGE) from MONKEY m)">
+		</property>
+		
+		<!-- description属性中有引用标识符 `` '''-->
+		<property name="description" type="text">
+			<column name="`MONKEY DESCRIPTION`" />
+		</property>
+	</class>
+</hibernate-mapping>

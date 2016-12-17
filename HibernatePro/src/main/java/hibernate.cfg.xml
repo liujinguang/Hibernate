@@ -13,6 +13,12 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
         
+        <!--  
         <mapping resource="xyyj/chapter03/Monkey.hbm.xml"/>
+        -->
+        <mapping resource="xyyj/chapter04/IncrementTester.hbm.xml"/>
+        <mapping resource="xyyj/chapter04/IdentifyTester.hbm.xml"/>
+        <mapping resource="xyyj/chapter04/HiloTester.hbm.xml"/>
+        <mapping resource="xyyj/chapter04/NativeTest.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

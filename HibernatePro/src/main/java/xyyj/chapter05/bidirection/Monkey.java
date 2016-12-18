@@ -1,28 +1,24 @@
-package xyyj.chapter05.unidirection;
+package xyyj.chapter05.bidirection;
 
 public class Monkey {
-	private long id;
-	private String name;
-	private Team team;
-
 	public Monkey() {
+		
 	}
-
-	public Monkey(String name, Team team) {
+	
+	public Monkey(String name) {
 		this.name = name;
-		this.team = team;
+	}
+	
+	public Long getId() {
+		return id;
 	}
 
-	public long getId() {
-		return this.id;
-	}
-
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
 	public String getName() {
-		return this.name;
+		return name;
 	}
 
 	public void setName(String name) {
@@ -30,7 +26,7 @@ public class Monkey {
 	}
 
 	public Team getTeam() {
-		return this.team;
+		return team;
 	}
 
 	public void setTeam(Team team) {
@@ -42,4 +38,7 @@ public class Monkey {
 		return "[ID=" + id + ", name=" + name + "]";
 	}
 
+	private Long id;
+	private String name;
+	private Team team;
 }

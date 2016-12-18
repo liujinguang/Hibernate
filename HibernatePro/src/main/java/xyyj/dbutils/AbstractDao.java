@@ -14,7 +14,11 @@ public abstract class AbstractDao {
 							 .buildSessionFactory();
 	}
 	
-    public static void saveOrUpdate(Object object) {
+	public Session getSession() {
+		return sessionFactory.openSession();
+	}
+	
+    public void saveOrUpdate(Object object) {
         Session session = sessionFactory.openSession();
         Transaction tx = null;
 
@@ -36,7 +40,7 @@ public abstract class AbstractDao {
         
     }
 
-    public static void delete(Object obj) {
+    public void delete(Object obj) {
     	Session session = sessionFactory.openSession();
         Transaction tx = null;
 
@@ -57,7 +61,7 @@ public abstract class AbstractDao {
         }
     }
 
-    public Object getById(Class clazz, int id) {
+    public Object getById(Class clazz, long id) {
     	Session session = sessionFactory.openSession();
         Transaction tx = null;
         Object object = null;
@@ -81,17 +85,6 @@ public abstract class AbstractDao {
         return object;
     }
     
-//    public boolean isValidUser(String user, String password) {
-//    	List<Admin> list = findAll();
-//    	
-//    	for (Admin admin : list) {
-//    		if (admin.getName().equals(user) && admin.getPassword().equals(password)) {
-//    			return true;
-//    		}
-//    	}
-//    	
-//    	return false;
-//    }
 
     @SuppressWarnings("unchecked")
     public List findAll(Class clazz) {

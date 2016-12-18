@@ -1,18 +1,17 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Dec 17, 2016 10:51:45 PM by Hibernate Tools 3.5.0.Final -->
+<!-- Generated Dec 18, 2016 2:09:01 PM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="xyyj.chapter05.unidirection.Monkey" table="MONKEY">
-        <id name="id" type="long">
+    <class name="xyyj.chapter05.bidirection.Monkey" table="MONKEY">
+        <id name="id" type="java.lang.Long">
             <column name="ID" />
             <generator class="increment" />
         </id>
         <property name="name" type="java.lang.String">
             <column name="NAME" />
         </property>
-        <many-to-one name="team" class="xyyj.chapter05.unidirection.Team" fetch="join" lazy="false"
-            cascade="save-update">
+        <many-to-one name="team" class="xyyj.chapter05.bidirection.Team" fetch="join">
             <column name="TEAM_ID" />
         </many-to-one>
     </class>

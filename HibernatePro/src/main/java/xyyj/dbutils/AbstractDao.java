@@ -18,6 +18,10 @@ public abstract class AbstractDao {
 		return sessionFactory.openSession();
 	}
 	
+	public StatelessSession getStatelessSession() {
+	    return sessionFactory.openStatelessSession();
+	}
+	
     public void saveOrUpdate(Object object) {
         Session session = sessionFactory.openSession();
         Transaction tx = null;

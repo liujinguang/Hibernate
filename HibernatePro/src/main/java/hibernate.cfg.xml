@@ -5,18 +5,20 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.password">infinera</property>
+        <property name="hibernate.connection.password">liuqi80</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/db_hibernate</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.jdbc.batch_size">20</property>
+        <property name="hibernate.cache.use_second_level_cache">false</property>
         
+        <!--  
         <mapping resource="xyyj/chapter05/bidirection/Monkey.hbm.xml"/>
         <mapping resource="xyyj/chapter05/bidirection/Team.hbm.xml"/>
         
-        <!--  
         <mapping resource="xyyj/chapter05/unidirection/Monkey.hbm.xml"/>
         <mapping resource="xyyj/chapter05/unidirection/Team.hbm.xml"/>
         
@@ -27,6 +29,8 @@
         <mapping resource="xyyj/chapter04/HiloTester.hbm.xml"/>
         <mapping resource="xyyj/chapter04/NativeTest.hbm.xml"/>
         -->
+        <mapping resource="xyyj/chapter06/Monkey.hbm.xml"/>
+        <mapping resource="xyyj/chapter06/Team.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>

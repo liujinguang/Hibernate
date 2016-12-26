@@ -12,10 +12,12 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.use_sql_comments">true</property>
+         <!--  
         <property name="hibernate.jdbc.batch_size">20</property>
         <property name="hibernate.cache.use_second_level_cache">false</property>
         
-        <!--  
+       
         <mapping resource="xyyj/chapter05/bidirection/Monkey.hbm.xml"/>
         <mapping resource="xyyj/chapter05/bidirection/Team.hbm.xml"/>
         
@@ -28,9 +30,14 @@
         <mapping resource="xyyj/chapter04/IdentifyTester.hbm.xml"/>
         <mapping resource="xyyj/chapter04/HiloTester.hbm.xml"/>
         <mapping resource="xyyj/chapter04/NativeTest.hbm.xml"/>
-        -->
+        
         <mapping resource="xyyj/chapter06/Monkey.hbm.xml"/>
         <mapping resource="xyyj/chapter06/Team.hbm.xml"/>
+        
+        <mapping resource="xyyj/chapter07/Monkey.hbm.xml"/>
+        <mapping resource="xyyj/chapter07/Team.hbm.xml"/>
+        -->
+        <mapping resource="xyyj/chapter08/Monkey.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>

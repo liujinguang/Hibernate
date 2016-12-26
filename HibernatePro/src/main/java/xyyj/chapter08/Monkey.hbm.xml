@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-12-25 16:14:45 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="xyyj.chapter08.Monkey" table="MONKEY">
+		<id name="id" type="java.lang.Long">
+			<column name="ID" />
+			<generator class="increment" />
+		</id>
+		<property name="name" type="java.lang.String">
+			<column name="NAME" />
+		</property>
+		
+		<component name="homeAddress" class="xyyj.chapter08.Address">
+	       <parent name="monkey"/>
+	       <property name="street" type="string" column="HOME_STREET"></property>
+	       <property name="city" type="string" column="HOME_CITY"></property>
+	       <property name="province" type="string" column="HOME_province"></property>
+	       <property name="zipcode" type="string" column="HOME_ZIPCODE"></property>
+		</component>
+
+        <component name="comAddress" class="xyyj.chapter08.Address">
+           <parent name="monkey"/>
+           <property name="street" type="string" column="COM_STREET"></property>
+           <property name="city" type="string" column="COM_CITY"></property>
+           <property name="province" type="string" column="COM_province"></property>
+           <property name="zipcode" type="string" column="COM_ZIPCODE"></property>
+        </component>
+        <!--  
+		<many-to-one name="homeAddress" class="xyyj.chapter08.Address"
+			fetch="join">
+			<column name="HOMEADDRESS" />
+		</many-to-one>
+		<one-to-one name="comAddress" class="xyyj.chapter08.Address"></one-to-one>
+		-->
+	</class>
+</hibernate-mapping>

@@ -3,19 +3,28 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2016-12-21 21:07:18 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="xyyj.chapter06.Monkey" table="MONKEY">
-        <id name="id" type="java.lang.Long">
-            <column name="ID" />
-            <generator class="increment" />
-        </id>
-        <property name="name" type="java.lang.String">
-            <column name="NAME" />
-        </property>
-        <property name="age" type="int">
-            <column name="AGE" />
-        </property>
-        <many-to-one name="team" class="xyyj.chapter06.Team" fetch="join" cascade="save-update">
-            <column name="TEAM_ID" />
-        </many-to-one>
-    </class>
+	<class name="xyyj.chapter06.Monkey" table="MONKEY">
+		<id name="id" type="java.lang.Long">
+			<column name="ID" />
+			<generator class="increment" />
+		</id>
+		<property name="name" type="java.lang.String">
+			<column name="NAME" />
+		</property>
+		<property name="age" type="int">
+			<column name="AGE" />
+		</property>
+		<many-to-one name="team" class="xyyj.chapter06.Team"
+			fetch="join" cascade="save-update">
+			<column name="TEAM_ID" />
+		</many-to-one>
+	</class>
+
+	<sql-query name="GetMonkeys">
+	   <return alias="monkey" class="xyyj.chapter06.Monkey"></return>
+	   SELECT monkey.ID as {monkey.id},
+	          monkey.NAME as {monkey.name},
+	          monkey.AGE as {monkey.age} 
+	   FROM MONKEY monkey
+	</sql-query>
 </hibernate-mapping>

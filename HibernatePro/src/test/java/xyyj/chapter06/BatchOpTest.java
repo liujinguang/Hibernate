@@ -134,5 +134,51 @@ public class BatchOpTest {
             }
         }
     }
+    
+    @Test
+    public void testHQLBatchlyUpdate() {
+        Session session = dao.getSession();
+        Transaction tx = null;
+        
+        try {
+            tx = session.beginTransaction();
+            String hqlUpdateString = "update Monkey m set m.name = :newName where m.name = :oldName";
+            int updatedEntities = session.createQuery(hqlUpdateString)
+                    .setString("newName", "Monkey500")
+                    .setString("oldName", "Monkey499")
+                    .executeUpdate();
+            System.out.println("Totally " + updatedEntities + " entities updated");
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+        } finally {
+            session.close();
+        }
+    }
+    
+    @Test
+    public void testHQLBatchDelete() {
+        Session session = dao.getSession();
+        Transaction tx = null;
+        
+        try {
+            tx = session.beginTransaction();
+            
+            String hqlDelete = "delete Monkey m where m.name = :oldName";
+            int deletedEntities = session.createQuery(hqlDelete)
+                                  .setString("oldName", "Monkey500")
+                                  .executeUpdate();
+            System.out.println("Totally " + deletedEntities + " entities were deleted");
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null) {
+                tx.commit();
+            }
+        } finally {
+            session.close();
+        }
+    }
 
 }

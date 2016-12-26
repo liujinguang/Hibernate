@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-12-26 21:30:35 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="xyyj.chapter08.Computer" table="COMPUTER">
+		<id name="id" type="long">
+			<column name="ID" />
+			<generator class="increment" />
+		</id>
+		<property name="type" type="java.lang.String">
+			<column name="COMPUTER_TYPE" />
+		</property>
+		<comment name="cpuBox" class="xyyj.chapter08.CpuBox">
+			<parent name="computer" />
+			<property name="type" type="string">
+				<column name="CPUBOX_TYPE"></column>
+			</property>
+			<component name="grahicsCard" class="xyyj.chapter08.GraphicsCard">
+				<parent name="cpuBox" />
+				<property name="type" type="string">
+					<column name="GRAPHICSCARD_TYPE" />
+				</property>
+			</component>
+
+			<many-to-one name="vendor" column="CPUBOX_VENDOR_ID"
+				class="xyyj.chapter08.Vendor" not-null="true" />
+		</comment>
+	</class>
+</hibernate-mapping>

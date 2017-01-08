@@ -64,5 +64,35 @@ public class TestHashSet {
             System.out.println(integer);
         }
     }
+    
+    @Test
+    public void testMonkeyTreeSet() {
+    	Set<Monkey> set = new TreeSet<Monkey>();
+    	set.add(new Monkey(15, "Tom"));
+    	set.add(new Monkey(20, "Tom"));
+    	set.add(new Monkey(15, "Tom"));
+    	set.add(new Monkey(15, "Mike"));
+    	
+    	Iterator<Monkey> iter = set.iterator();
+    	while (iter.hasNext()) {
+			Monkey	monkey = iter.next();
+			System.out.println(monkey);
+		}
+    }
+    
+    @Test
+    public void testMonkeyTreeSet1() {
+    	Set<Monkey> set = new TreeSet<Monkey>(new MonkeyComparator());
+    	set.add(new Monkey(15, "Tom"));
+    	set.add(new Monkey(20, "Tom"));
+    	set.add(new Monkey(15, "Tom"));
+    	set.add(new Monkey(15, "Mike"));
+    	
+    	Iterator<Monkey> iter = set.iterator();
+    	while (iter.hasNext()) {
+			Monkey	monkey = iter.next();
+			System.out.println(monkey);
+		}
+    }
 
 }

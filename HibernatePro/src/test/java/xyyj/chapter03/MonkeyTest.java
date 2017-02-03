@@ -1,4 +1,4 @@
-package com.jliu.xyyj.chapter03;
+package xyyj.chapter03;
 
 import org.junit.Test;
 

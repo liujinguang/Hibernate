@@ -1,7 +1,5 @@
 package xyyj.chapter08;
 
-import static org.junit.Assert.*;
-
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

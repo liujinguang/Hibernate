@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 3, 2017 1:41:27 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <joined-subclass name="xyyj.chapter10.imp3.JMonkey" extends="xyyj.chapter10.imp3.Monkey" table="JMONKEYS" lazy="false">
+        <key>
+            <column name="MONKEY_ID" />
+        </key>
+        <property name="color" type="java.lang.String">
+            <column name="COLOR" />
+        </property>
+    </joined-subclass>
+</hibernate-mapping>

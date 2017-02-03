@@ -5,7 +5,7 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.password">liuqi80</property>
+        <property name="hibernate.connection.password">infinera</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/db_hibernate</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
@@ -36,8 +36,23 @@
         
         <mapping resource="xyyj/chapter07/Monkey.hbm.xml"/>
         <mapping resource="xyyj/chapter07/Team.hbm.xml"/>
-        -->
+        
         <mapping resource="xyyj/chapter08/Monkey.hbm.xml"/>
+        <mapping resource="xyyj/chapter09/Monkey.hbm.xml"/>
+        
+        
+        <mapping resource="xyyj/chapter10/imp1/Team.hbm.xml"/>
+        <mapping resource="xyyj/chapter10/imp1/JMonkey.hbm.xml"/>
+        <mapping resource="xyyj/chapter10/imp1/CMonkey.hbm.xml"/>
+        
+        <mapping resource="xyyj/chapter10/imp2/Team.hbm.xml"/>
+        <mapping resource="xyyj/chapter10/imp2/Monkey.hbm.xml"/>        
+        -->
+        
+        <mapping resource="xyyj/chapter10/imp3/Team.hbm.xml"/>
+        <mapping resource="xyyj/chapter10/imp3/Monkey.hbm.xml"/>
+        <mapping resource="xyyj/chapter10/imp3/CMonkey.hbm.xml"/>
+        <mapping resource="xyyj/chapter10/imp3/JMonkey.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>

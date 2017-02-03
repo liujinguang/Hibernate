@@ -1,4 +1,4 @@
-package com.jliu.xyyj.chapter02;
+package xyyj.chapter02;
 
 
 import java.util.List;

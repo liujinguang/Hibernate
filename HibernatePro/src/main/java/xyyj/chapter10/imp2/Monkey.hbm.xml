@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 2, 2017 3:22:17 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="xyyj.chapter10.imp2.Monkey" table="Monkeys" discriminator-value="MM">
+        <id name="id" type="long">
+            <column name="ID"></column>
+            <generator class="increment"></generator>
+        </id>
+        <discriminator column="MONKEY_TYPE" type="string">
+        </discriminator>
+        <property name="name" type="string" column="NAME">
+            
+        </property>
+        <many-to-one name="team" column="TEAM_ID" class="xyyj.chapter10.imp2.Team">
+        </many-to-one>
+        
+        <subclass name="xyyj.chapter10.imp2.JMonkey" discriminator-value="JM">
+            <property name="color" type="string" column="COLOR"></property>
+        </subclass>
+        
+        <subclass name="xyyj.chapter10.imp2.CMonkey" discriminator-value="CM">
+            <property name="length" type="double" column="LENGTH"></property>
+        </subclass>
+    </class>
+    
+    
+</hibernate-mapping>

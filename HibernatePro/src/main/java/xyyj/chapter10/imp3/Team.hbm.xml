@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 3, 2017 1:41:27 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="xyyj.chapter10.imp3.Team" table="TEAMS">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <set name="monkeys" table="MONKEY" inverse="true" lazy="true">
+            <key>
+                <column name="TEAM_ID" />
+            </key>
+            <one-to-many class="xyyj.chapter10.imp3.Monkey" />
+        </set>
+    </class>
+</hibernate-mapping>

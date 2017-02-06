@@ -46,13 +46,33 @@
         <mapping resource="xyyj/chapter10/imp1/CMonkey.hbm.xml"/>
         
         <mapping resource="xyyj/chapter10/imp2/Team.hbm.xml"/>
-        <mapping resource="xyyj/chapter10/imp2/Monkey.hbm.xml"/>        
-        -->
+        <mapping resource="xyyj/chapter10/imp2/Monkey.hbm.xml"/>      
         
         <mapping resource="xyyj/chapter10/imp3/Team.hbm.xml"/>
         <mapping resource="xyyj/chapter10/imp3/Monkey.hbm.xml"/>
         <mapping resource="xyyj/chapter10/imp3/CMonkey.hbm.xml"/>
         <mapping resource="xyyj/chapter10/imp3/JMonkey.hbm.xml"/>
+        
+        <mapping resource="xyyj/chapter12/testset/Monkey.hbm.xml"/>  
+        <mapping resource="xyyj/chapter12/testbag/Monkey.hbm.xml"/>
+        <mapping resource="xyyj/chapter12/testlist/Monkey.hbm.xml"/>
+        <mapping resource="xyyj/chapter12/testmap/Monkey.hbm.xml"/>
+        <mapping resource="xyyj/chapter12/testsort/Monkey.hbm.xml"/>
+
+        <mapping resource="xyyj/chapter13/fkmap/Address.hbm.xml"/>
+        <mapping resource="xyyj/chapter13/fkmap/Monkey.hbm.xml"/>
+        
+        <mapping resource="xyyj/chapter13/pkmap/Address.hbm.xml"/>
+        <mapping resource="xyyj/chapter13/pkmap/Monkey.hbm.xml"/>
+        
+        <mapping resource="xyyj/chapter13/smm/Teacher.hbm.xml"/>
+        <mapping resource="xyyj/chapter13/smm/Monkey.hbm.xml"/>
+        
+        <mapping resource="xyyj/chapter13/dmm1/Teacher.hbm.xml"/>
+        <mapping resource="xyyj/chapter13/dmm1/Monkey.hbm.xml"/>        
+        -->
+        <mapping resource="xyyj/chapter13/dmm2/Teacher.hbm.xml"/>
+        <mapping resource="xyyj/chapter13/dmm2/Monkey.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>

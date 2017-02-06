@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 5, 2017 10:49:40 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="xyyj.chapter13.dmm2.Teacher" table="TEACHER">
+		<id name="id" type="java.lang.Long">
+			<column name="ID" />
+			<generator class="increment" />
+		</id>
+		<property name="name" type="java.lang.String">
+			<column name="NAME" />
+		</property>
+		<set name="learnings" table="LEARNING" inverse="false" lazy="true">
+			<key>
+				<column name="TEACHER_ID" />
+			</key>
+			<composite-element class="xyyj.chapter13.dmm2.Learning">
+				<parent name="teacher"></parent>
+				<many-to-one name="monkey" class="xyyj.chapter13.dmm2.Monkey"
+					column="MONKEY_ID" not-null="true"></many-to-one>
+				<property name="gongfu" column="GONGFU" type="string"
+					not-null="true"></property>
+			</composite-element>
+		</set>
+	</class>
+</hibernate-mapping>

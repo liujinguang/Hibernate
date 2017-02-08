@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 7, 2017 10:38:28 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="xyyj.chapter15.optimisticLock.Monkey" table="MONKEYS">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <version name="version" column="VERSION" type="int"></version>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="count" type="int">
+            <column name="COUNT" />
+        </property>
+    </class>
+</hibernate-mapping>

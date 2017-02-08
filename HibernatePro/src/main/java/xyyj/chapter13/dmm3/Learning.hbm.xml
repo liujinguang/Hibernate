@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 6, 2017 8:40:44 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="xyyj.chapter13.dmm3.Learning" table="LEARNING">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="teacher" class="xyyj.chapter13.dmm3.Teacher" fetch="join">
+            <column name="TEACHER_ID" />
+        </many-to-one>
+        <many-to-one name="monkey" class="xyyj.chapter13.dmm3.Monkey" fetch="join">
+            <column name="MONKEY_ID" />
+        </many-to-one>
+        <property name="gongfu" type="java.lang.String">
+            <column name="GONGFU" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -9,6 +9,7 @@
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/db_hibernate</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.isolation">2</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
@@ -69,10 +70,19 @@
         <mapping resource="xyyj/chapter13/smm/Monkey.hbm.xml"/>
         
         <mapping resource="xyyj/chapter13/dmm1/Teacher.hbm.xml"/>
-        <mapping resource="xyyj/chapter13/dmm1/Monkey.hbm.xml"/>        
-        -->
+        <mapping resource="xyyj/chapter13/dmm1/Monkey.hbm.xml"/>   
+        
         <mapping resource="xyyj/chapter13/dmm2/Teacher.hbm.xml"/>
-        <mapping resource="xyyj/chapter13/dmm2/Monkey.hbm.xml"/>
+        <mapping resource="xyyj/chapter13/dmm2/Monkey.hbm.xml"/>   
+        
+        <mapping resource="xyyj/chapter13/dmm3/Teacher.hbm.xml"/>
+        <mapping resource="xyyj/chapter13/dmm3/Monkey.hbm.xml"/>
+        <mapping resource="xyyj/chapter13/dmm3/Learning.hbm.xml"/>  
+        
+        <mapping resource="xyyj/chapter15/pessimisticLock/Monkey.hbm.xml"/>
+                
+        -->
+        <mapping resource="xyyj/chapter15/optimisticLock/Monkey.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>
